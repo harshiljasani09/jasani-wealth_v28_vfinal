@@ -6,6 +6,25 @@
  * Cream base, navy / burgundy / gold accents.
  */
 
+/* Self-hosted sans so mobile browsers never fall back to Helvetica/Arial,
+   which renders noticeably heavier than PP Neue Montreal Book. */
+@font-face {
+  font-family: "PP Neue Montreal";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/ppneuemontreal-book.woff") format("woff");
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./assets/fonts/ppneuemontreal-medium.woff") format("woff");
+}
+
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -148,6 +167,8 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 400;
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* Never let the browser fake a bolder/italic face */
