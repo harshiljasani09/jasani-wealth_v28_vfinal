@@ -126,6 +126,9 @@
 
   html {
     scroll-behavior: smooth;
+    /* Stop mobile browsers from inflating / re-weighting text */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   html.is-resizing {
@@ -146,6 +149,10 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Never let the browser fake a bolder/italic face */
+    font-synthesis: none;
+    -webkit-font-synthesis: none;
   }
 
   h1,
@@ -155,7 +162,14 @@
     font-family: var(--font-display);
     font-weight: 300;
     letter-spacing: -0.01em;
+    font-synthesis: none;
+    -webkit-font-synthesis: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-optical-sizing: auto;
   }
+
 }
 
 @utility eyebrow {
